@@ -15,7 +15,7 @@ class DataEngine:
         cap = cv2.VideoCapture(video_path)
         #---error-handling---
         if not cap.isOpened():
-            print(f"Error opening video stream or file {video_path} isn't open}")
+            print(f"Error opening video stream or file {video_path} isn't open")
             return []
         fps = cap.get(cv2.CAP_PROP_FPS)
         frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
