@@ -30,10 +30,10 @@ class FusionNet(nn.Module):
             nn.Sigmoid()
         )
 
-        def forward(self, x, dct):
-            features_x = self.spatial(x)
-            features_xdct = self.frequency_branch(dct)
-            concat = torch.cat((features_x, features_xdct), 1)
-            return self.classifier(concat)
+    def forward(self, x, dct):
+        features_x = self.spatial(x)
+        features_xdct = self.frequency_branch(dct)
+        concat = torch.cat((features_x, features_xdct), 1)
+        return self.classifier(concat)
 
 
